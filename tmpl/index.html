@@ -1,0 +1,30 @@
+{{ define "content" }}
+
+<h1>Welcome to SUR (Solus User Repository)</h1>
+
+<h2>Add repository</h2>
+
+<pre>
+  $ sudo eopkg add-repo SUR {{.BaseURL}}/packages/eopkg-index.xml.xz
+</pre>
+
+<h2>Available packages</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 250px;">Name</th>
+      <th style="width: 700px;">Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{range .Packages}}
+    <tr>
+      <td><code>{{.Name}}</code></td>
+      <td>{{.Summary}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+
+{{ end }}

@@ -1,0 +1,115 @@
+<PISI>
+    <Package>
+        <Name>font-jetbrains-mono-ttf</Name>
+        <Summary xml:lang="en">JetBrains Mono Fonts</Summary>
+        <Description xml:lang="en">JetBrains Mono. A typeface for developers_</Description>
+        <PartOf>desktop.font</PartOf>
+        <License>Apache-2.0</License>
+        <History>
+            <Update release="1">
+                <Date>2020-03-14</Date>
+                <Version>1.0.3</Version>
+                <Comment>Packaging update</Comment>
+                <Name>Fabian Mettler</Name>
+                <Email>fabian@mettler.cc</Email>
+            </Update>
+        </History>
+        <BuildHost>solus</BuildHost>
+        <Distribution>Solus</Distribution>
+        <DistributionRelease>1</DistributionRelease>
+        <Architecture>x86_64</Architecture>
+        <InstalledSize>1129620</InstalledSize>
+        <PackageSize>244211</PackageSize>
+        <PackageHash>818726415f44d639b829c72f57cccebab59ca445</PackageHash>
+        <PackageURI>font-jetbrains-mono-ttf/font-jetbrains-mono-ttf-1.0.3-1-1-x86_64.eopkg</PackageURI>
+        <PackageFormat>1.2</PackageFormat>
+        <Source>
+            <Name>font-jetbrains-mono-ttf</Name>
+            <Packager>
+                <Name>Fabian Mettler</Name>
+                <Email>fabian@mettler.cc</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>strongswan</Name>
+        <Summary xml:lang="en">An Open Source IPsec-based VPN solution for Linux</Summary>
+        <Description xml:lang="en">strongSwan is an Open Source IPsec-based VPN solution for Linux</Description>
+        <PartOf>network.clients</PartOf>
+        <License>GPL-2.0-or-later</License>
+        <RuntimeDependencies>
+            <Dependency releaseFrom="11">gmp</Dependency>
+            <Dependency releaseFrom="61">glibc</Dependency>
+            <Dependency releaseFrom="60">glib2</Dependency>
+            <Dependency releaseFrom="37">openssl</Dependency>
+            <Dependency releaseFrom="57">curl</Dependency>
+            <Dependency releaseFrom="53">network-manager</Dependency>
+        </RuntimeDependencies>
+        <History>
+            <Update release="1">
+                <Date>2020-03-14</Date>
+                <Version>5.8.2</Version>
+                <Comment>Packaging update</Comment>
+                <Name>Fabian Mettler</Name>
+                <Email>fabian@mettler.cc</Email>
+            </Update>
+        </History>
+        <BuildHost>solus</BuildHost>
+        <Distribution>Solus</Distribution>
+        <DistributionRelease>1</DistributionRelease>
+        <Architecture>x86_64</Architecture>
+        <InstalledSize>3499212</InstalledSize>
+        <PackageSize>1038037</PackageSize>
+        <PackageHash>dc14185caa746d997dc5d5dcd70569640994caa4</PackageHash>
+        <PackageURI>strongswan/strongswan-5.8.2-1-1-x86_64.eopkg</PackageURI>
+        <PackageFormat>1.2</PackageFormat>
+        <Source>
+            <Name>strongswan</Name>
+            <Packager>
+                <Name>Fabian Mettler</Name>
+                <Email>fabian@mettler.cc</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>networkmanager-strongswan</Name>
+        <Summary xml:lang="en">strongSwan support for NetworkManager</Summary>
+        <Description xml:lang="en">strongSwan IPsec VPN plugin for NetworkManager which provides support for EAP, PSK and certificate authentication.</Description>
+        <PartOf>network.base</PartOf>
+        <License>GPL-2.0-or-later</License>
+        <RuntimeDependencies>
+            <Dependency releaseFrom="89">libgtk-3</Dependency>
+            <Dependency releaseFrom="35">network-manager-applet</Dependency>
+            <Dependency releaseFrom="15">libsecret</Dependency>
+            <Dependency releaseFrom="61">glibc</Dependency>
+            <Dependency releaseFrom="60">glib2</Dependency>
+            <Dependency releaseFrom="53">network-manager</Dependency>
+            <Dependency>strongswan</Dependency>
+        </RuntimeDependencies>
+        <History>
+            <Update release="1">
+                <Date>2020-03-14</Date>
+                <Version>1.4.5</Version>
+                <Comment>Packaging update</Comment>
+                <Name>Fabian Mettler</Name>
+                <Email>fabian@mettler.cc</Email>
+            </Update>
+        </History>
+        <BuildHost>solus</BuildHost>
+        <Distribution>Solus</Distribution>
+        <DistributionRelease>1</DistributionRelease>
+        <Architecture>x86_64</Architecture>
+        <InstalledSize>90540</InstalledSize>
+        <PackageSize>18431</PackageSize>
+        <PackageHash>9de28ef2da718f5c44ee06591a96f8cfcc15f145</PackageHash>
+        <PackageURI>networkmanager-strongswan/networkmanager-strongswan-1.4.5-1-1-x86_64.eopkg</PackageURI>
+        <PackageFormat>1.2</PackageFormat>
+        <Source>
+            <Name>networkmanager-strongswan</Name>
+            <Packager>
+                <Name>Fabian Mettler</Name>
+                <Email>fabian@mettler.cc</Email>
+            </Packager>
+        </Source>
+    </Package>
+</PISI>
