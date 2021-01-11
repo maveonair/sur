@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"path/filepath"
 	"text/template"
 	"time"
 
@@ -40,7 +41,8 @@ func main() {
 }
 
 func packagesIndex(w http.ResponseWriter, r *http.Request) {
-	packages, err := eopkg.ParseIndex("static/packages/eopkg-index.xml")
+	indexFilePath := filepath.Join(getPackageDir(), "eopkg-index.xml")
+	packages, err := eopkg.ParseIndex(indexFilePath)
 	if err != nil {
 		log.Error(err)
 		w.WriteHeader(http.StatusInternalServerError)
@@ -65,4 +67,13 @@ func getBaseURL(r *http.Request) string {
 	}
 
 	return fmt.Sprintf("http://%s", r.Host)
+}
+
+func getPackageDir() string {
+	packageDir := os.Getenv("SUR_PACKAGE_DIR")
+	if packageDir != "" {
+		return packageDir
+	}
+
+	return "static/packages"
 }
