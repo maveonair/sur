@@ -22,7 +22,7 @@ type PageData struct {
 
 func main() {
 
-	fsPackages := http.FileServer(http.Dir("static"))
+	fsPackages := http.FileServer(http.Dir(getStaticDir()))
 
 	router := mux.NewRouter()
 	router.PathPrefix("/packages").Handler(fsPackages)
@@ -41,7 +41,7 @@ func main() {
 }
 
 func packagesIndex(w http.ResponseWriter, r *http.Request) {
-	indexFilePath := filepath.Join(getPackageDir(), "eopkg-index.xml")
+	indexFilePath := filepath.Join(getStaticDir(), "packages", "eopkg-index.xml")
 	packages, err := eopkg.ParseIndex(indexFilePath)
 	if err != nil {
 		log.Error(err)
@@ -69,11 +69,11 @@ func getBaseURL(r *http.Request) string {
 	return fmt.Sprintf("http://%s", r.Host)
 }
 
-func getPackageDir() string {
-	packageDir := os.Getenv("SUR_PACKAGE_DIR")
+func getStaticDir() string {
+	packageDir := os.Getenv("SUR_STATIC_DIR")
 	if packageDir != "" {
 		return packageDir
 	}
 
-	return "static/packages"
+	return "static"
 }
