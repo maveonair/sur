@@ -21,7 +21,6 @@ type PageData struct {
 }
 
 func main() {
-
 	fsPackages := http.FileServer(http.Dir(getStaticDir()))
 
 	router := mux.NewRouter()
