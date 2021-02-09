@@ -15,6 +15,7 @@ type Package struct {
 	Summary     string   `xml:"Summary"`
 	Description string   `xml:"Description"`
 	License     string   `xml:"License"`
+	History     History  `xml:"History"`
 }
 
 // ByName implements the sorting interface to sort a slice of packages.

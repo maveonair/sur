@@ -7,13 +7,13 @@ import (
 
 func TestSortingPackages(t *testing.T) {
 	packages := []Package{
-		Package{
+		{
 			Name: "strongswan",
 		},
-		Package{
+		{
 			Name: "networkmanager-strongswan",
 		},
-		Package{
+		{
 			Name: "font-jetbrains-mono-ttf",
 		},
 	}

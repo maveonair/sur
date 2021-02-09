@@ -14,13 +14,15 @@
   <thead>
     <tr>
       <th style="width: 250px;">Name</th>
-      <th style="width: 700px;">Summary</th>
+      <th style="width: 100px;">Version</th>
+      <th style="width: 600px;">Summary</th>
     </tr>
   </thead>
   <tbody>
     {{range .Packages}}
     <tr>
       <td><code>{{.Name}}</code></td>
+      <td>{{.History.Update.Version}}</td>
       <td>{{.Summary}}</td>
     </tr>
     {{end}}

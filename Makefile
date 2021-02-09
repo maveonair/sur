@@ -1,4 +1,4 @@
-.PHONY: build test
+.PHONY: build test dev
 
 VERSION=0.1.0
 
@@ -10,3 +10,5 @@ test:
 	cp test/fixtures/eopkg-index.xml static/packages
 	go test ./...
 
+dev:
+	go run .
