@@ -33,3 +33,18 @@ func TestBaseURLInTemplate(t *testing.T) {
 		t.Errorf("expected %s to be the base URL", baseURL)
 	}
 }
+
+func TestFsPackages(t *testing.T) {
+	req, err := http.NewRequest("GET", "/packages/eopkg-index.xml", nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	res := httptest.NewRecorder()
+	handler := http.HandlerFunc(packagesIndex)
+	handler.ServeHTTP(res, req)
+
+	if res.Code != 200 {
+		t.Errorf("Expected HTTP status 200, found %d", res.Code)
+	}
+}

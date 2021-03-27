@@ -8,9 +8,9 @@ import (
 	"text/template"
 	"time"
 
-	"git.sr.ht/~maveonair/sur/eopkg"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	"github.com/maveonair/sur/eopkg"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -24,7 +24,7 @@ func main() {
 	fsPackages := http.FileServer(http.Dir(getPackagesDirectory()))
 
 	router := mux.NewRouter()
-	router.PathPrefix("/packages").Handler(fsPackages)
+	router.PathPrefix("/packages").Handler(http.StripPrefix("/packages/", fsPackages))
 	router.HandleFunc("/", packagesIndex).Methods("GET")
 
 	handler := handlers.LoggingHandler(os.Stdout, router)

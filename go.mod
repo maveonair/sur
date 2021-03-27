@@ -1,4 +1,4 @@
-module git.sr.ht/~maveonair/sur
+module github.com/maveonair/sur
 
 go 1.14
 
