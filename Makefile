@@ -8,7 +8,10 @@ build:
 test:
 	mkdir -p static/packages
 	cp test/fixtures/eopkg-index.xml static/packages
+
+	SUR_PACKAGES_DIR=static/packages \
 	go test ./...
 
 dev:
+	SUR_PACKAGES_DIR=static/packages \
 	go run .

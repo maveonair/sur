@@ -21,7 +21,7 @@ type PageData struct {
 }
 
 func main() {
-	fsPackages := http.FileServer(http.Dir(getStaticDir()))
+	fsPackages := http.FileServer(http.Dir(getPackagesDirectory()))
 
 	router := mux.NewRouter()
 	router.PathPrefix("/packages").Handler(fsPackages)
@@ -40,7 +40,7 @@ func main() {
 }
 
 func packagesIndex(w http.ResponseWriter, r *http.Request) {
-	indexFilePath := filepath.Join(getStaticDir(), "packages", "eopkg-index.xml")
+	indexFilePath := filepath.Join(getPackagesDirectory(), "eopkg-index.xml")
 	packages, err := eopkg.ParseIndex(indexFilePath)
 	if err != nil {
 		log.Error(err)
@@ -68,11 +68,11 @@ func getBaseURL(r *http.Request) string {
 	return fmt.Sprintf("http://%s", r.Host)
 }
 
-func getStaticDir() string {
-	packageDir := os.Getenv("SUR_STATIC_DIR")
-	if packageDir != "" {
-		return packageDir
+func getPackagesDirectory() string {
+	packageDir := os.Getenv("SUR_PACKAGES_DIR")
+	if packageDir == "" {
+		log.Fatal("SUR_PACKAGES_DIR not defined")
 	}
 
-	return "static"
+	return packageDir
 }
