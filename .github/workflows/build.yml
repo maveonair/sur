@@ -1,5 +1,5 @@
 ---
-name: PR check
+name: Build
 
 on: push
 
