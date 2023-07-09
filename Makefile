@@ -1,6 +1,6 @@
 .PHONY: build test dev
 
-VERSION=1.2.0
+VERSION=1.3.0
 
 build:
 	CGO_ENABLED=0  go build -o ./dist/sur -a -ldflags '-s' -installsuffix cgo .
